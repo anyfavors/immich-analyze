@@ -1,7 +1,13 @@
 [package]
 name = "immich-analyze"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
+description = "AI-powered image description generator for Immich photo management system"
+authors = ["timasoft <tima.klester@yandex.ru>"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/timasoft/immich-analyze"
+keywords = ["immich", "ai", "image-analysis", "ollama", "photo-management"]
+categories = ["command-line-utilities", "multimedia::images"]
 
 [dependencies]
 base64 = "0.22"
