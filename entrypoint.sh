@@ -24,7 +24,7 @@ args=(
 
 # Add optional configuration safely
 if [ -n "$IMMICH_ANALYZE_OLLAMA_HOSTS" ]; then
-    args+=("--ollama-hosts $IMMICH_ANALYZE_OLLAMA_HOSTS")
+    args+=("--ollama-hosts" "$IMMICH_ANALYZE_OLLAMA_HOSTS")
 fi
 
 if [ -n "$IMMICH_ANALYZE_MODEL_NAME" ]; then
