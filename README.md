@@ -56,7 +56,8 @@ services:
     container_name: immich-analyze
     restart: unless-stopped
     volumes:
-      - ./immich-data:/data
+      - ${UPLOAD_LOCATION}:/data
+      - /etc/localtime:/etc/localtime:ro
     environment:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
