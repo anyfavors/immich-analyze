@@ -138,7 +138,8 @@ nix run github:timasoft/immich-analyze --immich-root /path/to/immich/data --post
 | `IMMICH_ANALYZE_PROMPT` | Prompt for generating image descriptions | Create a detailed description for the image for proper image search functionality. In the response, provide only the description without introductory words. Also specify the image format (Wallpaper, Screenshot, Drawing, City photo, Selfie, etc.). The format must be correct. If in doubt, name the most likely option and don't think too long. |
 | `IMMICH_ANALYZE_IGNORE_EXISTING` | Ignore existing descriptions | `false` |
 | `IMMICH_ANALYZE_MAX_CONCURRENT` | Max concurrent requests | `4` |
-| `IMMICH_ANALYZE_TIMEOUT` | Request timeout in seconds | `3600` |
+| `IMMICH_ANALYZE_UNAVAILABLE_DURATION` | Ollama host availability check interval in seconds | `60` |
+| `IMMICH_ANALYZE_TIMEOUT` | Request timeout in seconds | `300` |
 
 ### Command Line Arguments
 
@@ -155,8 +156,8 @@ Options:
       --ollama-hosts <OLLAMA_HOSTS>      Ollama host URLs [default: http://localhost:11434]
       --max-concurrent <MAX_CONCURRENT>  Maximum number of concurrent requests to Ollama [default: 4]
       --unavailable-duration <UNAVAILABLE_DURATION>
-                                         Ollama host availability check interval in seconds [default: 3600]
-      --timeout <TIMEOUT>                HTTP/Ollama request timeout in seconds [default: 3600]
+                                         Ollama host availability check interval in seconds [default: 60]
+      --timeout <TIMEOUT>                HTTP/Ollama request timeout in seconds [default: 300]
       --file-write-timeout <FILE_WRITE_TIMEOUT>
                                          File write timeout in seconds [default: 30]
       --file-check-interval <FILE_CHECK_INTERVAL>
@@ -226,6 +227,6 @@ The application integrates with your Immich instance by analyzing preview images
 
 - **Batch Mode**: Process all existing images in your library
 - **Monitor Mode**: Automatically process new images as they're added to Immich
-- **Combined Mode**: Process existing images first, then monitor for new additions
+- **Combined Mode**: Process existing images in background while simultaneously monitoring for new additions
 
 The system includes automatic retry logic with multiple Ollama hosts and handles file stability checks to ensure images are fully written before processing.

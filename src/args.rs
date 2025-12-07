@@ -24,17 +24,17 @@ pub struct Args {
     /// Ollama model name for image analysis
     #[arg(long, default_value = "qwen3-vl:4b-thinking-q4_K_M")]
     pub model_name: String,
-    /// Ollama host URLs (default: http://localhost:11434)
+    /// Ollama host URLs
     #[arg(long, default_value = "http://localhost:11434", value_delimiter = ',')]
     pub ollama_hosts: Vec<String>,
     /// Maximum number of concurrent requests to Ollama
     #[arg(long, default_value_t = 4)]
     pub max_concurrent: usize,
     /// Ollama host availability check interval in seconds
-    #[arg(long, default_value_t = 3600)]
+    #[arg(long, default_value_t = 60)]
     pub unavailable_duration: u64,
     /// HTTP/Ollama request timeout in seconds
-    #[arg(long, default_value_t = 3600)]
+    #[arg(long, default_value_t = 300)]
     pub timeout: u64,
     /// File write timeout in seconds
     #[arg(long, default_value_t = 30)]

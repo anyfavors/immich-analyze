@@ -44,6 +44,10 @@ if [[ "$IMMICH_ANALYZE_MAX_CONCURRENT" =~ ^[0-9]+$ ]]; then
     args+=("--max-concurrent" "$IMMICH_ANALYZE_MAX_CONCURRENT")
 fi
 
+if [[ "$IMMICH_ANALYZE_UNAVAILABLE_DURATION" =~ ^[0-9]+$ ]]; then
+    args+=("--unavailable-duration" "$IMMICH_ANALYZE_UNAVAILABLE_DURATION")
+fi
+
 if [[ "$IMMICH_ANALYZE_TIMEOUT" =~ ^[0-9]+$ ]]; then
     args+=("--timeout" "$IMMICH_ANALYZE_TIMEOUT")
 fi
