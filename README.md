@@ -214,6 +214,8 @@ The application integrates with your Immich instance by analyzing preview images
 
 The system includes automatic retry logic with multiple Ollama hosts and handles file stability checks to ensure images are fully written before processing.
 
-TODO:
+## TODO:
+- [ ] Add waiting list
+- [ ] Add JWT support
 - [ ] Add NixOS service module
 - [ ] Add video support
