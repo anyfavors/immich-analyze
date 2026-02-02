@@ -6,7 +6,7 @@ pub struct Args {
     /// Enable folder monitoring mode
     #[arg(short, long)]
     pub monitor: bool,
-    /// Enable combined mode: process existing images then monitor for new ones
+    /// Enable combined mode: process existing images then monitor for new ones 
     #[arg(short, long)]
     pub combined: bool,
     /// Ignore existing entries in database
