@@ -12,7 +12,7 @@ pub struct Args {
     /// Ignore existing entries in database
     #[arg(short, long)]
     pub ignore_existing: bool,
-    /// Path to Immich root directory (containing upload/, thumbs/ folders)
+    /// Path to Immich root directory  (containing upload/, thumbs/ folders)
     #[arg(long, default_value = "/var/lib/immich")]
     pub immich_root: String,
     /// PostgreSQL connection string
